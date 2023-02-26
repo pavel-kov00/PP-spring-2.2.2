@@ -7,12 +7,17 @@
 </head>
 <body>
 <div>
-    <h1>Car & cars alskda laskdma lllas kdsd lask masl swakfaslf </h1>
-    <th:block th:each="car : ${cars}">
-        <h1 th:text="${car.getMarka()}"></h1>
-        <h1 th:text="${car.getModel()}"></h1>
-        <h1 th:text="${car.getSeries()}"></h1>
-    </th:block>
+    <h1>Car & cars </h1>
+
+        <table>
+            <tr>
+                <th:block th:each="car : ${cars}">
+                <td><h3 th:text="${car.getMarka()}"></h3> </td>
+                <td> <h4 th:text="${car.getModel()}"></h4> </td>
+                <td> <h4 th:text="${car.getSeries()}"></h4>  </td>
+                </th:block>
+            </tr>
+        </table>
 
 </div>
 </body>
