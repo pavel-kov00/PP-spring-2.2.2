@@ -11,12 +11,13 @@ import web.service.CarServiceImpl;
 
 @Controller
 public class CarController {
-
+    @Autowired
+    CarService carService;
     @GetMapping(value = "/car")
     public String printCar(ModelMap model, @RequestParam(value = "count", defaultValue = "3") int count){
         System.out.println("count = " + count );
-        System.out.println(CarServiceImpl.showCars(count));
-        model.addAttribute("cars", CarServiceImpl.showCars(count));
+        System.out.println(carService.showCars(count));
+        model.addAttribute("cars", carService.showCars(count));
         return "car";
     }
 }
